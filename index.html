@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/yxgKFKLM/favicon-32x32.png">
+  <title>Frontend Mentor | Notifications page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap-grid.min.css" integrity="sha512-JQksK36WdRekVrvdxNyV3B0Q1huqbTkIQNbz1dlcFVgNynEMRl0F8OSqOGdVppLUDIvsOejhr/W5L3G/b3J+8w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap-utilities.min.css" integrity="sha512-DEGBrwaCF4lkKzMKNwt8Qe/V54bmJctk7I1HyfINGAIugDvsdBeuWzAWZmXAmm49P6EBfl/OeUM01U3r7cW4jg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel='stylesheet' href='notifications-page-main.css' type='text/css'>
+</head>
+<body>
+      <main>
+	       <div class='container pt-5 pb-5'>
+		        <div class='row'>
+				    <div class='col-12 outer d-flex flex-column align-items-center'>
+					     <div class='mt-5 col-12 col-xxl-8 d-flex flex-row align-items-center justify-content-evenly'>
+                               <div class='d-flex flex-row'><strong>Notifications</strong><span class='text-center ms-2' data-num='0' id='number-update'></span></div>
+                               <!-- the blue background is not visible to some so it makes sense to set this button to aria disabled-->
+                               <button aria-disabled="true" type='button' class='btn btn-primary'>Mark all as read</button>
+						 </div>
+                         <div class='mb-5 col-12 col-xxl-8 d-flex flex-column'>
+						       <article data-status='on' data-read='new' class='mb-3 d-flex flex-row justify-content-start'>
+									     <img src='https://raw.githubusercontent.com/cmb347827/notifications-page-main-github.io/main/avatar-mark-webber.webp' alt='avatar mark image' width='90' height='90'>
+										 <div class='d-flex flex-column'>
+											 <p class='d-flex flex-wrap'><a href='#' class='name me-1'>Mark Webber</a> reacted to your recent post <a class='ms-2 message-link' href='#'>My first tournament today!</a><i class="fa-solid fa-circle"></i></p>
+                                             <span class='when'>1m ago</span>
+									     </div>
+                               </article>
+							   <article data-status='on' data-read='new' class='mb-3 d-flex flex-row justify-content-start'>
+									     <img src='https://raw.githubusercontent.com/cmb347827/notifications-page-main-github.io/main/avatar-angela-gray.webp'  alt='avatar angela image' width='90' height='90'>
+										 <div class='d-flex flex-column'>
+										      <p class='d-flex flex-wrap'><a href='#' class='name me-1'>Angela Gray</a> followed you <i class="fa-solid fa-circle"></i></p>
+									          <span class='when'>5m ago</span>
+										 </div>
+							   </article>
+                               <article data-status='on' data-read='new' class='mb-3 d-flex flex-row justify-content-start'>
+									     <img src='https://raw.githubusercontent.com/cmb347827/notifications-page-main-github.io/main/avatar-jacob-thompson.webp' alt='avatar jacob image' width='90' height='90'>
+                                         <div class='d-flex flex-column'>
+											 <p class='d-flex flex-wrap'><a href='#' class='name me-1'>Jacob Thompson</a> has joined your group <a class='ms-2 message-link' href='#'>Chess Club</a><i class="fa-solid fa-circle"></i></p>
+                                             <span class='when'>1 day ago</span>
+										 </div>
+							   </article>
+                               <article data-status='off' data-read='old' class='mb-3 d-flex flex-column align-items-start'>
+									     <div class='d-flex flex-row'>
+										    <img src='https://raw.githubusercontent.com/cmb347827/notifications-page-main-github.io/main/avatar-rizky-hasanuddin.webp' alt='avatar rizky image' width='90' height='90'>
+                                            <div class='d-flex flex-column'>
+											    <p class='d-flex flex-wrap'><a href='#' class='name me-1'>Rizky Hasanuddin</a> sent you a private message <i class="fa-solid fa-circle"></i></p>
+									            <span class='when'>5 days ago</span>
+												<p class='reaction mt-2 mb-2 align-self-center flex-wrap'>Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
+                                    I'm already having lots of fun and improving my game.</p>
+										    </div>
+										  </div>
+                                    
+                               </article>
+							   <article data-status='off' data-read='old' class='mb-3 d-flex flex-column'>
+                                          <div class='d-flex flex-row justify-content-between'>
+										      <div class='d-flex flex-row'>
+  									              <img src='https://raw.githubusercontent.com/cmb347827/notifications-page-main-github.io/main/avatar-kimberly-smith.webp' alt='avatar kimberly image' width='90' height='90'>
+										          <div class='d-flex flex-column'>
+											           <p class='d-flex flex-wrap'><a href='#' class='name me-1'>Kimberly Smith</a> commented on your picture <i class="fa-solid fa-circle"></i></p>
+										               <span class='when'>1 week ago</span>
+										          </div>
+										      </div>
+										      <a href='#'><img src='https://raw.githubusercontent.com/cmb347827/notifications-page-main-github.io/main/image-chess.webp' alt='notifications page owner image' width='90' height='90'></a>
+                                          </div>
+							   </article>
+							   <article data-status='off' data-read='old' class='mb-3 d-flex flex-row justify-content-start'>   
+										  <img src='https://raw.githubusercontent.com/cmb347827/notifications-page-main-github.io/main/avatar-nathan-peterson.webp' alt='avatar nathan image' width='90' height='90'>
+										  <div class='d-flex flex-column'>
+											   <p class='d-flex flex-wrap'><a href='#' class='name me-1'>Nathan Peterson</a> reacted to your recent post 5 end-game strategies to increase your win rate <i class="fa-solid fa-circle"></i></p>
+									           <span class='when'>2 weeks ago</span>
+										  </div>
+                               </article>
+							   <article data-status='off' data-read='old' class='d-flex flex-row justify-content-start'>
+										  <img src='https://raw.githubusercontent.com/cmb347827/notifications-page-main-github.io/main/avatar-anna-kim.webp' alt='avatar anna image' width='90' height='90'>
+										  <div class='d-flex flex-column'>
+											   <p class='d-flex flex-wrap'><a href='#' class='name me-1'>Anna Kim</a> left the group Chess Club <i class="fa-solid fa-circle"></i></p>
+									           <span class='when'>2 weeks ago</span>
+										  </div>
+							   </article>
+					     </div>
+					</div>
+				</div>
+		   </div>
+      </main>
+      <footer>
+        <div class="attribution mt-5">
+            <span>Challenge by</span><a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+            <span>Coded by</span><a href="https://www.frontendmentor.io/profile/cmb347827">CMB</a>.
+        </div>
+      </footer>
+	  
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.js" integrity="sha512-nO7wgHUoWPYGCNriyGzcFwPSF+bPDOR+NvtOYy2wMcWkrnCNPKBcFEkU80XIN14UVja0Gdnff9EmydyLlOL7mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      
+	  <script src='notifications-page-main.js'></script>
+	  <!--html validated at https://validator.nu/#textarea on 3-12-2023-->
+	  <!--complained about 'article lacking heading', but according to MDN 'https://developer.mozilla.org/en-US/docs/Web/HTML/Element#content_sectioning' section only defintely needs a heading and article is good for forum posts etc--> 
+</body>
+</html>

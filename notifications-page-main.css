@@ -1,0 +1,94 @@
+*,
+::before,
+::after {
+  box-sizing: border-box; }
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  color: DarkBlue;
+  color: #1c202b; }
+
+main {
+  overflow: auto;
+  width: 100%;
+  display: grid;
+  min-height: 100vh;
+  place-content: center; }
+  main .container {
+    width: 375px;
+    background-color: Azure;
+    background-color: #f7fafd; }
+    main .container .outer > div:first-of-type {
+      background-color: Snow;
+      background-color: white;
+      border-radius: 15px 15px 0 0;
+      padding: 25px; }
+      main .container .outer > div:first-of-type #number-update {
+        background-color: DarkBlue;
+        background-color: #1c202b;
+        color: Snow;
+        color: white;
+        border-radius: 9px;
+        width: 40px; }
+      main .container .outer > div:first-of-type button {
+        border: none;
+        background-color: Snow;
+        background-color: white;
+        color: LightSteelBlue;
+        color: #939dae;
+        font-weight: 500; }
+        main .container .outer > div:first-of-type button:hover {
+          color: DarkBlue;
+          color: #1c202b; }
+    main .container .outer > div:last-of-type {
+      background-color: Snow;
+      background-color: white;
+      font-weight: 500;
+      padding: 25px; }
+      main .container .outer > div:last-of-type i {
+        color: Crimson;
+        color: #f65351;
+        display: none; }
+      main .container .outer > div:last-of-type .name,
+      main .container .outer > div:last-of-type .message-link {
+        text-decoration: none;
+        font-weight: 800;
+        color: DarkBlue;
+        color: #1c202b; }
+      main .container .outer > div:last-of-type .name:hover {
+        color: CornflowerBlue;
+        color: #0a317b; }
+      main .container .outer > div:last-of-type .message-link {
+        color: DarkBlue;
+        color: #1c202b; }
+        main .container .outer > div:last-of-type .message-link:hover {
+          color: CornflowerBlue;
+          color: #0a317b; }
+      main .container .outer > div:last-of-type .reaction {
+        border: 1px solid #1c202b;
+        max-width: 200px; }
+        main .container .outer > div:last-of-type .reaction:hover {
+          background-color: AliceBlue;
+          background-color: #e5effa; }
+        @media screen and (min-width: 1400px) {
+          main .container .outer > div:last-of-type .reaction {
+            min-width: 720px; } }
+      main .container .outer > div:last-of-type .when {
+        color: LightSteelBlue;
+        color: #939dae; }
+    @media screen and (min-width: 1400px) {
+      main .container {
+        width: 1400px; } }
+
+footer .attribution {
+  font-size: 11px;
+  text-align: center; }
+footer .attribution a {
+  color: #3e52a3; }
+
+/*# sourceMappingURL=notifications-page-main.css.map */

@@ -1,0 +1,186 @@
+//beautified at https://codebeautify.org/scss-beautifier on 3-12-2023
+
+$container__form-xs: 375;
+$container__form-sm: 576;
+$container__form-md: 768;
+$container__form-lg: 992;
+$container__form-xl: 1200;
+$container__form-xxl: 1400;
+
+$container__form-xxl-min: 1399;
+$font_size: 16px;
+$font_weight-normal: 400;
+$font_weight-medium: 500;
+$font_weight-extra-bold: 800;
+
+$colors: (
+  Red: hsl(1, 90%, 64%),
+  Blue: hsl(219, 85%, 26%),
+  White: hsl(0, 0%, 100%),
+  Very light grayish blue: hsl(210, 60%, 98%),
+  Light grayish blue 1: hsl(211, 68%, 94%),
+  Light grayish blue 2: hsl(205, 33%, 90%),
+  Grayish blue: hsl(219, 14%, 63%),
+  Dark grayish blue: hsl(219, 12%, 42%),
+  Very dark blue: hsl(224, 21%, 14%),
+);
+$fallback-colors: (
+  Crimson CornflowerBlue Snow Azure AliceBlue PowderBlue LightSteelBlue SkyBlue
+    DarkBlue
+);
+
+@mixin font-color($color, $fallback-color) {
+  color: $fallback-color;
+  color: $color;
+}
+
+@mixin bg-color($color, $fallback-color) {
+  background-color: $fallback-color;
+  background-color: $color;
+}
+
+@mixin width($grid-size) {
+  width: $grid-size * 1px;
+}
+@mixin max-width($grid-size) {
+  max-width: $grid-size * 1px;
+}
+@mixin min-width($grid-size) {
+  min-width: $grid-size * 1px;
+}
+@mixin border-radius($radius...) {
+  border-radius: $radius;
+}
+@mixin margin($args...) {
+  margin: $args;
+}
+@mixin padding($args...) {
+  padding: $args;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: $font_weight-normal;
+  @include font-color(
+    map-get($colors, Very dark blue),
+    nth($fallback-colors, 9)
+  );
+  @media screen and (min-width: $container__form-xxl * 1px) {
+  }
+}
+
+main {
+  overflow: auto;
+  width: 100%;
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+
+  .container {
+    @include width($container__form-xs);
+    @include bg-color(
+      map-get($colors, Very light grayish blue),
+      nth($fallback-colors, 4)
+    );
+
+    .outer > div:first-of-type {
+      @include bg-color(map-get($colors, White), nth($fallback-colors, 3));
+      @include border-radius(15px 15px 0 0);
+      @include padding(25px);
+      #number-update {
+        @include bg-color(
+          map-get($colors, Very dark blue),
+          nth($fallback-colors, 9)
+        );
+        @include font-color(map-get($colors, White), nth($fallback-colors, 3));
+        @include border-radius(9px);
+        @include width(40);
+      }
+      button {
+        border: none;
+        @include bg-color(map-get($colors, White), nth($fallback-colors, 3));
+        @include font-color(
+          map-get($colors, Grayish blue),
+          nth($fallback-colors, 7)
+        );
+        font-weight: $font_weight-medium;
+        &:hover {
+          @include font-color(
+            map-get($colors, Very dark blue),
+            nth($fallback-colors, 9)
+          );
+        }
+      }
+    }
+    .outer > div:last-of-type {
+      @include bg-color(map-get($colors, White), nth($fallback-colors, 3));
+      font-weight: $font_weight-medium;
+      @include padding(25px);
+      i {
+        @include font-color(map-get($colors, Red), nth($fallback-colors, 1));
+        display: none;
+      }
+      .name,
+      .message-link {
+        text-decoration: none;
+        font-weight: $font_weight-extra-bold;
+        @include font-color(
+          map-get($colors, Very dark blue),
+          nth($fallback-colors, 9)
+        );
+      }
+      .name {
+        &:hover {
+          @include font-color(map-get($colors, Blue), nth($fallback-colors, 2));
+        }
+      }
+      .message-link {
+        @include font-color(
+          map-get($colors, Very dark blue),
+          nth($fallback-colors, 9)
+        );
+        &:hover {
+          @include font-color(map-get($colors, Blue), nth($fallback-colors, 2));
+        }
+      }
+      .reaction {
+        border: 1px solid map-get($colors, Very dark blue);
+        @include max-width(200);
+        &:hover {
+          @include bg-color(
+            map-get($colors, Light grayish blue 1),
+            nth($fallback-colors, 5)
+          );
+        }
+        @media screen and (min-width: $container__form-xxl * 1px) {
+          @include min-width(720);
+        }
+      }
+	  .when{
+	     @include font-color(map-get($colors, Grayish blue), nth($fallback-colors, 7));
+	  }
+    }
+    @media screen and (min-width: $container__form-xxl * 1px) {
+      @include width($container__form-xxl);
+    }
+  }
+}
+
+footer {
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+}
